@@ -1,76 +1,35 @@
 package br.com.test.jokenpo;
 
-import java.util.Scanner;
+import br.com.test.jokenpo.game.Item;
+import br.com.test.jokenpo.game.Rock;
+import br.com.test.jokenpo.game.Scissor;
 
 /**
  * Created by Marcelo on 28/03/2017.
  */
 public class Main {
 
-    Scanner sc = new Scanner(System.in);
-    int v1, v2;
+    /**
+     * Main method of the project.
+     * Only contains one game of Jo Ken Po.
+     *
+     * @param args
+     */
+    public static void main(String[] args) {
 
-		System.out.println("Escolha entre 0, 1 e 2 , sendo : ");
-        System.out.println("Pedra = 0 ");
-        System.out.println("Papel = 1  ");
-        System.out.println("Tesoura = 2");
+        System.out.println("Rodando o jogo");
 
-		System.out.println("Jogador 1: ");
-    v1 =sc.nextInt();
+        Item item1 = new Rock();
+        Item item2 = new Scissor();
 
-		System.out.println("Jogador 2: ");
-    v2 =sc.nextInt();
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder
+                .append("O item Pedra ")
+                .append(item1.play(item2).toString().toLowerCase())
+                .append(" jogando contra o item Tesoura.");
 
-		switch(v1)
+        System.out.println(stringBuilder.toString());
 
-    {
-        case 0:
-            switch (v2) {
-                case 0:
-                    System.out.println("Empate");
-                    break;
-                case 1:
-                    System.out.println("Jogador 2 ganhou");
-                    break;
-                case 2:
-                    System.out.println("Jogador 1 ganhou");
-                    break;
-                default:
-                    System.out.println("USUARIO BURRO DO CARALHO");
-            }
-            break;
-        case 1:
-            switch (v2) {
-                case 0:
-                    System.out.println("Jogador 1 ganhou");
-                    break;
-                case 1:
-                    System.out.println(" Empatou");
-                    break;
-                case 2:
-                    System.out.println("Jogador 2 ganhou");
-                    break;
-                default:
-                    System.out.println("USUARIO BURRO DO CARALHO");
-            }
-            break;
-        case 2:
-            switch (v2) {
-                case 0:
-                    System.out.println("Jogador 2 ganhou");
-                    break;
-                case 1:
-                    System.out.println("Jogador 1 ganhou");
-                    break;
-                case 2:
-                    System.out.println("Empate");
-                    break;
-                default:
-                    System.out.println("USUARIO BURRO DO CARALHO");
-            }
-            break;
-        default:
-            System.out.println("USUARIO BURRO DO CARALHO");
     }
 
 }

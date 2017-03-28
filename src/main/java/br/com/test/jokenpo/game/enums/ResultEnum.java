@@ -1,4 +1,4 @@
-package br.com.test.jokenpo.game;
+package br.com.test.jokenpo.game.enums;
 
 /**
  * Created by Marcelo on 28/03/2017.
